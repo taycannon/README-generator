@@ -21,7 +21,7 @@ const questions = [
     {
         //Table of contents
         type: 'input',
-        message: 'If your README is long, input a Table of Contents (optional)',
+        message: 'If your README is long, input a Table of Contents (optional & just press enter for N/A)',
         name: 'Table',
     },
 
@@ -92,10 +92,15 @@ function init() {
 ${answers.Description}
 
 ## Table of Contents
-${answers.Table}
 [Description](#description)
 
+[Installation](#Installation)
+
+[Usage](#Usage)
+
 [Credits](#Credits)
+
+[License](#License)
 
 [Contact-Information](#Contact-Information)
 
@@ -116,8 +121,6 @@ ${answers.License}
 GitHub: ${answers.GitHub}
 
 Email: ${answers.Email}
-
-
 
 `;
 

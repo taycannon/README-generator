@@ -8,27 +8,31 @@
 
 [Description](#description)
 
+[Installation](#Installation)
+
+[Usage](#Usage)
+
 [Credits](#Credits)
+
+[License](#License)
 
 [Contact-Information](#Contact-Information)
 
 ## Installation
-3
+
 
 ## Usage
-4
+
 
 ## Credits
-5
+
 
 ## License
 Academic Free License v3.0
 
 ## Contact Information
 
-GitHub: https://github.com/taycannon
+GitHub: 
 
-Email: test
-
-
+Email: 
 
