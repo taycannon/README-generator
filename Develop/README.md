@@ -2,20 +2,26 @@
 # Taylor
 
 ## Description
-12344
+Idk hello my name is Tay
 
-## Table of Contents
-- [123455](#123455)
-
+#undefined
 
 ## Installation
-3456
+inqurier 8.2.0
 
 ## Usage
-65
+To generate a readme
 
 ## Credits
-8
+1 tutor
 
 ## License
+MIT
+
+## Contact Information
+
+#GitHub: undefined
+#Email: taycannon2003@gmail.com
+
+
 

@@ -9,11 +9,14 @@ const questions = [
         message: 'What is the title of your project?',
         name: 'Title',
     },
+
+
     {
         type: 'input',
         message: 'Write a brief description of your project?',
         name: 'Description',
     },
+
 
     {
         //Table of contents
@@ -21,6 +24,7 @@ const questions = [
         message: 'If your README is long, input a Table of Contents (optional)',
         name: 'Table',
     },
+
 
     {
         type: 'input',
@@ -46,16 +50,28 @@ const questions = [
     {
         //The list of Licenses
         type: 'checkbox',
-        message: 'Did you have a license for this project? If so pick one! (Use arrows and enter',
+        message: 'Did you have a license for this project? If so pick one!',
         name: 'License',
         choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Boost Software License 1.0',
             'Microsoft Public License', 'MIT', 'GNU Affero General Public License v3.0', 'GNU General Public License family', 'N/A']
 
-    }
+    },
 
+
+    {
+        type: 'input',
+        message: 'Do you have a GitHub? If so put it here if not write N/A',
+        name: 'GitHub',
+    },
+
+    {
+        type: 'input',
+        message: 'Do you have a Email? If so put it here if not write N/A',
+        name: 'Email',
+    },
 ];
 
-
+//Function to initialize the README
 function init() {
     inquirer.prompt(questions)
         .then((answers) => {
@@ -73,7 +89,7 @@ function init() {
 ## Description
 ${answers.Description}
 
-${tableOfContents}
+#${answers.table}
 
 ## Installation
 ${answers.Installation}
@@ -86,6 +102,14 @@ ${answers.Credits}
 
 ## License
 ${answers.License}
+
+## Contact Information
+
+#GitHub: ${answers.GitHub}
+#Email: ${answers.Email}
+
+
+
 `;
 
             writeToFile(document);
