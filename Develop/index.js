@@ -4,45 +4,47 @@ const fs = require('fs')
 
 // Array of questions for user input
 const questions = [
+
+//Title
     {
         type: 'input',
         message: 'What is the title of your project?',
         name: 'Title',
     },
 
-
+//Description
     {
         type: 'input',
-        message: 'Write a brief description of your project?',
+        message: 'Write a brief description of your project!',
         name: 'Description',
     },
 
 
     {
-        //Table of contents
+//Table of contents
         type: 'input',
         message: 'If your README is long, input a Table of Contents (optional & just press enter for N/A)',
         name: 'Table',
     },
 
-
+//Install
     {
         type: 'input',
         message: 'Does users need to install anything?',
         name: 'Installation',
     },
 
-
+//Usage
     {
         type: 'input',
         message: 'What is the use for this project?',
         name: 'Usage',
     },
 
-
+//Credits
     {
         type: 'input',
-        message: 'Did you use outside help or work with others? If so put them here.',
+        message: 'Did you use outside help or work with others? If not write N/A or press enter.',
         name: 'Credits',
     },
 
@@ -60,13 +62,13 @@ const questions = [
 
     {
         type: 'input',
-        message: 'Do you have a GitHub? If so put it here if not write N/A',
+        message: 'Do you have a GitHub? If so put it here, if not write N/A',
         name: 'GitHub',
     },
 
     {
         type: 'input',
-        message: 'Do you have a Email? If so put it here if not write N/A',
+        message: 'Do you have a Email? If so put it here, if not write N/A',
         name: 'Email',
     },
 ];
@@ -85,24 +87,26 @@ function init() {
                 .map(section => `- [${section.trim()}](#${section.trim().toLowerCase().replace(/\s+/g, '-')})\n`)
                 .join('')}` : '';
 
+//README Contents begin here
             const document = `
+
 # ${answers.Title}
 
 ## Description
 ${answers.Description}
 
 ## Table of Contents
-[Description](#description)
+- [Description](#description)
 
-[Installation](#Installation)
+- [Installation](#Installation)
 
-[Usage](#Usage)
+- [Usage](#Usage)
 
-[Credits](#Credits)
+- [Credits](#Credits)
 
-[License](#License)
+- [License](#License)
 
-[Contact-Information](#Contact-Information)
+- [Contact-Information](#Contact-Information)
 
 ## Installation
 ${answers.Installation}
