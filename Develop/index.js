@@ -48,19 +48,12 @@ inquirer
 
  ];
     
- const createREADME = (answers) => 
+ const createREADME = (answers) => `
+ 
+ # ${answers.Title}
 
-    $(response.Title)
+ `
 
-    $(response.Description)
-
-    $(response.Installation)
-
-    $(response.Usage)
-
-    $(response.Credits)
-
-    $(response.License)
 
 
 
