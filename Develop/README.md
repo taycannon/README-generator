@@ -5,16 +5,21 @@
 2
 
 ## Table of Contents
-#hello
+
+[Description](#description)
+
+[Credits](#Credits)
+
+[Contact-Information](#Contact-Information)
 
 ## Installation
-4
+3
 
 ## Usage
-5
+4
 
 ## Credits
-6
+5
 
 ## License
 Academic Free License v3.0
@@ -23,7 +28,7 @@ Academic Free License v3.0
 
 GitHub: https://github.com/taycannon
 
-Email: test@gmail.com
+Email: test
 
 
 

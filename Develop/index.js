@@ -79,9 +79,11 @@ function init() {
                 console.error('Title and Description are required!');
                 return;
             }
-            console.log(answers);
 
-            const tableOfContents = answers.Table ? `## Table of Contents\n${answers.Table.split(',').map(section => `- [${section.trim()}](#${section.trim().toLowerCase().replace(/\s+/g, '-')})`).join('\n')}\n` : '';
+            const tableOfContents = answers.Table ? `## Table of Contents\n${answers.Table
+                .split(',')
+                .map(section => `- [${section.trim()}](#${section.trim().toLowerCase().replace(/\s+/g, '-')})\n`)
+                .join('')}` : '';
 
             const document = `
 # ${answers.Title}
@@ -90,7 +92,12 @@ function init() {
 ${answers.Description}
 
 ## Table of Contents
-#${answers.Table}
+${answers.Table}
+[Description](#description)
+
+[Credits](#Credits)
+
+[Contact-Information](#Contact-Information)
 
 ## Installation
 ${answers.Installation}
