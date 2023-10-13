@@ -89,7 +89,8 @@ function init() {
 ## Description
 ${answers.Description}
 
-#${answers.table}
+## Table of Contents
+#${answers.Table}
 
 ## Installation
 ${answers.Installation}
@@ -105,8 +106,9 @@ ${answers.License}
 
 ## Contact Information
 
-#GitHub: ${answers.GitHub}
-#Email: ${answers.Email}
+GitHub: ${answers.GitHub}
+
+Email: ${answers.Email}
 
 
 

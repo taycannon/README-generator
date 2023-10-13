@@ -1,27 +1,29 @@
 
-# Taylor
+# 1
 
 ## Description
-Idk hello my name is Tay
+2
 
-#undefined
+## Table of Contents
+#hello
 
 ## Installation
-inqurier 8.2.0
+4
 
 ## Usage
-To generate a readme
+5
 
 ## Credits
-1 tutor
+6
 
 ## License
-MIT
+Academic Free License v3.0
 
 ## Contact Information
 
-#GitHub: undefined
-#Email: taycannon2003@gmail.com
+GitHub: https://github.com/taycannon
+
+Email: test@gmail.com
 
 
 
