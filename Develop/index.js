@@ -4,8 +4,7 @@ const fs = require('fs')
 
 // TODO: Create an array of questions for user input
 const questions = [
-inquirer
-    .prompt({
+{
         type: 'input',
         message: 'What is the title of your project?',
         name: 'Title',
@@ -45,11 +44,14 @@ inquirer
         choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Boost Software License 1.0', 
         'Microsoft Public License', 'MIT','GNU Affero General Public License v3.0', 'GNU General Public License family', 'N/A']
 
-    })
+    }
 
  ];
     
- const createREADME = (answers) => `
+ inquirer.prompt(questions) 
+ .then((answers) => {
+    console.log(answers);
+    let document = `
  
  # ${answers.Title}
 
@@ -66,7 +68,7 @@ inquirer
  `
 
 writeToFile(document)
-
+})
 
 
 // TODO: Create a function to write README file
@@ -77,7 +79,15 @@ function writeToFile(README) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
-
+function init() {
+    inquirer.prompt(questions)
+        .then((answers) => {
+            const readmeContent = createREADME(answers);
+            writeToFile(readmeContent);
+        })
+        .catch((error) => {
+            console.error('Error occurred:', error);
+        });
+}
 // Function call to initialize app
 init();
