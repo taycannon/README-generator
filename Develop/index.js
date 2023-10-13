@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs')
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -11,10 +11,16 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is the description of your project?',
+        message: 'Write a brief description of your project?',
         name: 'Description',
     },
 
+    {
+        //Table of contents
+        type: 'input',
+        message: 'If your README is long, input a Table of Contents (optional)',
+        name: 'Table',
+    },
 
     {
         type: 'input',
@@ -38,8 +44,9 @@ const questions = [
 
 
     {
-        type: 'list',
-        message: 'Did you have a license for this project? If so pick one!',
+        //The list of Licenses
+        type: 'checkbox',
+        message: 'Did you have a license for this project? If so pick one! (Use arrows and enter',
         name: 'License',
         choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Boost Software License 1.0',
             'Microsoft Public License', 'MIT', 'GNU Affero General Public License v3.0', 'GNU General Public License family', 'N/A']
@@ -48,34 +55,47 @@ const questions = [
 
 ];
 
-function init() {
- inquirer.prompt(questions)
-    .then((answers) => {
-        console.log(answers);
-const document = `
 
+function init() {
+    inquirer.prompt(questions)
+        .then((answers) => {
+            if (!answers.Title || !answers.Description) {
+                console.error('Title and Description are required!');
+                return;
+            }
+            console.log(answers);
+
+            const tableOfContents = answers.Table ? `## Table of Contents\n${answers.Table.split(',').map(section => `- [${section.trim()}](#${section.trim().toLowerCase().replace(/\s+/g, '-')})`).join('\n')}\n` : '';
+
+            const document = `
 # ${answers.Title}
 
+## Description
 ${answers.Description}
 
+${tableOfContents}
+
+## Installation
 ${answers.Installation}
 
+## Usage
 ${answers.Usage}
 
+## Credits
 ${answers.Credits}
 
+## License
 ${answers.License}
-`
+`;
 
-writeToFile(document);
-})
-    .catch((error) => {
-    console.error('Error occurred:', error);
-    });
+            writeToFile(document);
+        })
+        .catch((error) => {
+            console.error('Error occurred:', error);
+        });
 }
 
-
-// TODO: Create a function to write README file
+// The function to write README file
 function writeToFile(README) {
     fs.writeFile('README.md', README, (err) => {
         if (err) {
@@ -85,16 +105,6 @@ function writeToFile(README) {
         }
     });
 }
-// TODO: Create a function to initialize app
-// function init() {
-//     inquirer.prompt(questions)
-//         .then((answers) => {
-//             const readmeContent = createREADME(answers);
-//             writeToFile(readmeContent);
-//         })
-//         .catch((error) => {
-//             console.error('Error occurred:', error);
-//         });
-// }
+
 // Function call to initialize app
 init();
